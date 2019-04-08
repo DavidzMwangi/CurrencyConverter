@@ -228,8 +228,6 @@ public class SingleCurrencyActivity extends AppCompatActivity implements Adapter
 
 //                    Toast.makeText(SingleCurrencyActivity.this, currency_code, Toast.LENGTH_SHORT).show();
 
-
-
                 }catch (Exception e){
                     e.printStackTrace();
                 }
@@ -239,7 +237,8 @@ public class SingleCurrencyActivity extends AppCompatActivity implements Adapter
             public void onSuccess(int statusCode, Header[] headers, JSONArray response){
             super.onSuccess(statusCode,headers,response);
                 dismissProgressDialog();
-//                Toast.makeText(SingleCurrencyActivity.this, "Array", Toast.LENGTH_SHORT).show();
+
+
                 Log.e("array", response.toString() );
             }
 
@@ -258,6 +257,15 @@ public class SingleCurrencyActivity extends AppCompatActivity implements Adapter
                 Log.e("String",responseString);
             }
 
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+            }
         });
 
     }

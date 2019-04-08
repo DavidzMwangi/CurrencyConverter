@@ -269,7 +269,7 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
             pd.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-                    pd.dismiss();
+                    pd.dipsmiss();
                     System.exit(1);
                 }
             });
